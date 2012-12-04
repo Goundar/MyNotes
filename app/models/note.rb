@@ -1,3 +1,3 @@
 class Note < ActiveRecord::Base
-  attr_accessible :content, :user
+  attr_accessible :content, :title
 end
