@@ -4,6 +4,8 @@ class Note < ActiveRecord::Base
   validates_presence_of :content, :title
   validates_length_of :content, :maximum => 50
 
+  self.per_page = 3
+
   def self.search(keywords)
     where('lower(title) like :keywords OR lower(content) like :keywords', :keywords => "%#{keywords.downcase}%")
   end

@@ -2,7 +2,7 @@ class NotesController < ApplicationController
   # GET /notes
   # GET /notes.json
   def index
-    @notes = Note.all
+    @notes = Note.paginate :page => params[:page]
 
     respond_to do |format|
       format.html # index.html.erb
@@ -12,7 +12,7 @@ class NotesController < ApplicationController
 
   def search
     @keywords = params[:keywords]
-    @notes = Note.search(@keywords)
+    @notes = Note.search(@keywords).paginate :page => params[:page]
     render :index
   end
 
