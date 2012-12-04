@@ -9,4 +9,8 @@ class Note < ActiveRecord::Base
   def self.search(keywords)
     where('lower(title) like :keywords OR lower(content) like :keywords', :keywords => "%#{keywords.downcase}%")
   end
+
+  def as_json(opts={})
+    { :title => self.title, :content => self.content }
+  end
 end
