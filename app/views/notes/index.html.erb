@@ -1,5 +1,12 @@
 <h1>Listing notes</h1>
 
+<div id="search">
+  <%= form_tag(search_notes_path, :method => "get") do %>
+   <%= text_field_tag(:keywords, @keywords) %>
+   <%= submit_tag("Search") %>
+  <% end %>
+</div>
+
 <table>
   <tr>
     <th>Title</th>

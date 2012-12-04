@@ -10,6 +10,12 @@ class NotesController < ApplicationController
     end
   end
 
+  def search
+    @keywords = params[:keywords]
+    @notes = Note.search(@keywords)
+    render :index
+  end
+
   # GET /notes/1
   # GET /notes/1.json
   def show

@@ -1,6 +1,8 @@
 MyNotes::Application.routes.draw do
 
-  resources :notes
+  resources :notes do
+    get "search", :on => :collection
+  end
 
   root :to => "notes#index"
 
