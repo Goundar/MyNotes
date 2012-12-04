@@ -1,7 +1,7 @@
 class NotesController < ApplicationController
 
   def index
-    @message = "Hello world with a variable !"
+    @message = params[:message]
   end
 
 end
