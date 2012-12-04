@@ -11,9 +11,10 @@
   <tr>
     <th>Title</th>
     <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <% if user_signed_in? %>
+      <th></th>
+      <th></th>
+    <% end %>
   </tr>
 
   <%= render @notes %>
@@ -22,4 +23,6 @@
 <%= will_paginate @notes %>
 <br/>
 
-<%= link_to 'New Note', new_note_path, :class => "btn" %>
+<% if user_signed_in? %>
+  <%= link_to 'New Note', new_note_path, :class => "btn" %>
+<% end %>

@@ -24,6 +24,7 @@ gem 'jquery-rails'
 gem 'simple_form'
 gem 'bootstrap-sass'
 gem 'will_paginate'
+gem 'devise'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -13,6 +13,6 @@ class Note < ActiveRecord::Base
   end
 
   def as_json(opts={})
-    { :title => self.title, :content => self.content }
+    { :title => self.title, :content => self.content, :user => self.user.name }
   end
 end
