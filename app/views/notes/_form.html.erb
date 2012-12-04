@@ -1,5 +1,5 @@
-<%= simple_form_for(@note, :html => {:class => 'form-horizontal' }) do |f| %>
-  <%= f.input(:title) %>
-  <%= f.input(:content) %>
-  <%= f.submit %>
+<%= simple_form_for @note, :html => {:class => 'form-vertical' } do |f| %>
+  <%= f.input :title, :input_html => { :class => "span6" } %>
+  <%= f.input :content, :input_html => { :class => "span6" } %>
+  <%= f.submit :class => "btn" %>
 <% end %>
