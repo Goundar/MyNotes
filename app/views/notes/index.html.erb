@@ -22,8 +22,8 @@
 
 <%= form_tag("/", :method => :get) do %>
   <%= label_tag(:message, "Messages :") %>
-  <%= text_field_tag("message[]") %>
-  <%= text_field_tag("message[]") %>
-  <%= text_field_tag("message[]") %>
+  <%= text_field_tag("message[a]") %>
+  <%= text_field_tag("message[b]") %>
+  <%= text_field_tag("message[c]") %>
   <%= submit_tag("Show") %>
 <% end %>
