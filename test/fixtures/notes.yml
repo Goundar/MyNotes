@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  user: MyString
-  content: MyText
+  title: "DHH"
+  content: "I like Rails !"
 
 two:
-  user: MyString
-  content: MyText
+  title: "Matz"
+  content: "I love Ruby !"
