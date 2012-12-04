@@ -1,5 +1,21 @@
-<% if @message %>
-  <h1><%= @message %></h1>
-<% else %>
+<% if @message.nil? %>
+
   <h1>Hello world !</h1>
+
+<% elsif @message.is_a?(String) %>
+
+  <h1><%= @message %></h1>
+
+<% elsif @message.is_a?(Array) %>
+
+  <% @message.each do |element| %>
+    <h1><%= element %></h1>
+  <% end %>
+
+<% elsif @message.is_a?(Hash) %>
+
+  <% @message.each do |key, value| %>
+    <h1><%= key %>: <%= value %></h1>
+  <% end %>
+
 <% end %>
