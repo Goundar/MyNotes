@@ -1,29 +1,13 @@
-<% if @message.nil? %>
+<table>
+  <tr>
+    <th>User</th>
+    <th>Content</th>
+  </tr>
 
-  <h1>Hello world !</h1>
-
-<% elsif @message.is_a?(String) %>
-
-  <h1><%= @message %></h1>
-
-<% elsif @message.is_a?(Array) %>
-
-  <% @message.each do |element| %>
-    <h1><%= element %></h1>
+  <% @notes.each do |note| %>
+    <tr>
+      <td><%= note.user %></td>
+      <td><%= note.content %></td>
+    </tr>
   <% end %>
-
-<% elsif @message.is_a?(Hash) %>
-
-  <% @message.each do |key, value| %>
-    <h1><%= key %>: <%= value %></h1>
-  <% end %>
-
-<% end %>
-
-<%= form_tag("/", :method => :get) do %>
-  <%= label_tag(:message, "Messages :") %>
-  <%= text_field_tag("message[a]") %>
-  <%= text_field_tag("message[b]") %>
-  <%= text_field_tag("message[c]") %>
-  <%= submit_tag("Show") %>
-<% end %>
+</table>
